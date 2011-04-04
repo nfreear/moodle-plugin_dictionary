@@ -1,0 +1,79 @@
+﻿<?php
+global $CFG, $USER, $COURSE;
+require($CFG->dirroot .'/blog/lib.php');
+
+
+$usedictionary = get_record("block_dictionary","id",$id);
+
+?>
+<form name="theform" method="post" action="edit.php">
+<table align="center">
+	<tr>
+		<td>
+
+  <input type="hidden" name="sesskey" value="<?php echo sesskey(); ?>" />
+  <input type="hidden" name="instanceid" value="<?php echo $instanceid; ?>" />
+  <input type="hidden" name="id" value="<?php echo $id?>">
+  <input type="hidden" name="courseid" value="<?php echo $usedictionary->courseid?>">
+  <select name="dictionary" id="dictionary">
+	<option value="" <?php
+		if (empty($usedictionary->dictionary)) {
+			echo 'selected';
+		}
+	?> ><?php echo get_string('select','block_dictionary')?>
+	</option>
+  	<option value="<?php echo $CFG->filter_dictionary_uri;?>" 
+		<?php if ($CFG->filter_dictionary_uri == $usedictionary->dictionary) { 
+				echo 'selected';
+				} ?>><?php echo $CFG->filter_dictionary_name;?>
+	</option>
+    <option value="<?php echo $CFG->filter_dictionary_uri1;?>" 
+		<?php if ($CFG->filter_dictionary_uri1 == $usedictionary->dictionary) { 
+					echo 'selected';
+				}?>>
+		<?php echo $CFG->filter_dictionary_name1;?>
+	</option>
+    <option value="<?php echo $CFG->filter_dictionary_uri2;?>" 
+		<?php if ($CFG->filter_dictionary_uri2 == $usedictionary->dictionary) 
+		{ echo 'selected';
+		}?>>
+		<?php echo $CFG->filter_dictionary_name2;?>
+	</option>
+    <option value="<?php echo $CFG->filter_dictionary_uri3;?>" 
+	<?php if ($CFG->filter_dictionary_uri3 == $usedictionary->dictionary) { 
+			echo 'selected';
+		}?>>
+		<?php echo $CFG->filter_dictionary_name3;?>
+	</option>
+    <option value="<?php echo $CFG->filter_dictionary_uri4;?>" 
+	<?php if ($CFG->filter_dictionary_uri4 == $usedictionary->dictionary) { 
+			echo 'selected';
+		}?>><?php echo $CFG->filter_dictionary_name4;?>
+	</option>
+	<option value="<?php echo $CFG->filter_dictionary_uri5;?>" 
+	<?php if ($CFG->filter_dictionary_uri5 == $usedictionary->dictionary) { 
+			echo 'selected';
+		}?>><?php echo $CFG->filter_dictionary_name5;?>
+	</option>
+	<option value="<?php echo $CFG->filter_dictionary_uri6;?>" 
+	<?php if ($CFG->filter_dictionary_uri6 == $usedictionary->dictionary) { 
+			echo 'selected';
+		}?>><?php echo $CFG->filter_dictionary_name6;?>
+	</option>
+	<option value="<?php echo $CFG->filter_dictionary_uri7;?>" 
+	<?php if ($CFG->filter_dictionary_uri7 == $usedictionary->dictionary) { 
+			echo 'selected';
+		}?>><?php echo $CFG->filter_dictionary_name7;?>
+	</option>
+	<option value="<?php echo $CFG->filter_dictionary_uri8;?>" 
+	<?php if ($CFG->filter_dictionary_uri8 == $usedictionary->dictionary) { 
+			echo 'selected';
+		}?>><?php echo $CFG->filter_dictionary_name8;?>
+	</option>
+  </select><br>
+  <input type="submit" name="Submit" value="<?php echo get_string("submit","block_dictionary")?>">
+  <input type="submit" name="cancel" value="<?php print_string('cancel') ?>" />
+		</td>
+	</tr>
+</table>
+</form>
