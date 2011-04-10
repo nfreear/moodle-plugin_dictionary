@@ -16,4 +16,6 @@ $string['dictionaryname'] = 'Dictionary name';
 $string['dictionaryurl'] = 'Dictionary URL';
 $string['activated'] = 'The following dictionary is activated:';
 $string['instructions'] = 'In order to use the dictionary, double click on a word within the displayed text';
+// Accessibility: important for screen-reader users, etc. that we say 'New window' or similar!
+$string['tooltip'] = 'New window: double click on a word to view it in the dictionary';
 ?>
