@@ -5,12 +5,12 @@ Popup Dictionary plugin
 
 Patrick Thibaudeau's "Pop up Dictionary" filter/block plugin for Moodle 1.8 or later (currently not 2.0).
 
-A code-repository does not appear to be at http://cvs.moodle.org or elsewhere. 
+A code-repository does not appear to be at <http://cvs.moodle.org> or elsewhere. 
 (A short-term fork, I hope!)
 
 Installation
 ------------
-* See, http://moodle.org/mod/data/view.php?d=13&rid=1751
+* See <http://moodle.org/mod/data/view.php?d=13&rid=1751>
 
 DONE
 ----
@@ -31,8 +31,8 @@ Credits
 -------
 Dictionary plugin. Copyright (c) 2008 Patrick Thibaudeau.
 
-* License <http://gnu.org/copyleft/gpl.html> (to check)
-* About and code: http://moodle.org/mod/data/view.php?d=13&rid=1751
+* License: <http://gnu.org/copyleft/gpl.html> (to check)
+* About and code: <http://moodle.org/mod/data/view.php?d=13&rid=1751>
 
 Modifications. Nicholas Freear <http://freear.org.uk>
 
