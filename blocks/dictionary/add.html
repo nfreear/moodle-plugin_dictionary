@@ -21,6 +21,8 @@ if (!isset($CFG->filter_dictionary_uri)
 <table align="center">
 	<tr>
 		<td>
+<?php /* Accessibility - use a label. */ ?>
+<label for="dictionary"><?php echo get_string("dictionary", "block_dictionary")?></label>
 
   <input type="hidden" name="sesskey" value="<?php echo sesskey(); ?>" />
   <input type="hidden" name="instanceid" value="<?php echo $instanceid; ?>" />
