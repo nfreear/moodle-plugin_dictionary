@@ -15,7 +15,9 @@ function dictionary_filter($courseid,$text) {
 	// (prevent PHP notice "Trying to get property of non-object..")
 	if (is_object($usedictionary) && $usedictionary->id >=1) {
 //	if ($usedictionary->id >=1) {
-		$dictionaryhtml = '<span ondblclick="getSelText(\''.$usedictionary->dictionary.'\')">'.$text.'</span>';
+		//Usability/ accessibility: add a tooltip to explain usage.
+		$tooltip = get_string("tooltip", "block_dictionary");
+		$dictionaryhtml = "<span title=\"$tooltip\"".' class="dictionary filter" ondblclick="getSelText(\''.$usedictionary->dictionary.'\')">'.$text.'</span>';
 	} else {
 		$dictionaryhtml = $text; //if no records found do nothing to text
 	}
