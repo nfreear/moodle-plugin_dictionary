@@ -4,8 +4,18 @@ require($CFG->dirroot .'/blog/lib.php');
 
 $courseid = $COURSE->id;
 $usedictionary = get_record("block_dictionary","courseid",$courseid);
-$id = $usedictionary->dictionary;
+// Check before we de-reference - prevent PHP notices.
+$id = null;
+if ($usedictionary) {
+    $id = $usedictionary->dictionary;
+}
 
+if (!isset($CFG->filter_dictionary_uri)
+  || !isset($CFG->filter_dictionary_name)) {
+  // Prevent many PHP notices below - maybe print_error()?
+  debugging('The site-admin needs to go back and save settings, in Site Admin-Manage filters-Dictionary-Settings.');
+  return;
+}
 ?>
 <form name="theform" method="post" action="add.php">
 <table align="center">
@@ -17,8 +27,8 @@ $id = $usedictionary->dictionary;
   
   <input type="hidden" name="id" value="<?php echo $courseid?>">
   <select name="dictionary" id="dictionary">
-	<option value="" selected ><?php echo get_string('select','block_dictionary')?></option>
-  	<option value="<?php echo $CFG->filter_dictionary_uri;?>" ><?php echo $CFG->filter_dictionary_name;?></option>
+    <option value="" selected ><?php echo get_string('select','block_dictionary')?></option>
+    <option value="<?php echo $CFG->filter_dictionary_uri;?>" ><?php echo $CFG->filter_dictionary_name;?></option>
     <option value="<?php echo $CFG->filter_dictionary_uri1;?>"><?php echo $CFG->filter_dictionary_name1;?></option>
     <option value="<?php echo $CFG->filter_dictionary_uri2;?>"><?php echo $CFG->filter_dictionary_name2;?></option>
     <option value="<?php echo $CFG->filter_dictionary_uri3;?>"><?php echo $CFG->filter_dictionary_name3;?></option>
