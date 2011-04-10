@@ -26,6 +26,10 @@
 	 global $CFG, $USER, $COURSE;
 	 
 	 $usedictionary = get_record("block_dictionary","courseid",$COURSE->id);
+	 // Prevent warnings later.
+	 if (!$usedictionary) {
+	    $usedictionary = (object) array('id'=>0);
+	 }
 	 
 	 if (!$usedictionary->id > 0) {
 			$dictionaryname = get_string('nodictionary','block_dictionary');
@@ -64,10 +68,9 @@
 			/// Display dictionary used
 	        $this->content->items[] = get_string('selecteddictionary','block_dictionary').'<br>'.$dictionaryname;
 
-	        
 
 			/// link to add dictionary
-			if (!$usedictionary->id > 0) {
+			if (!is_object($usedictionary) || !$usedictionary->id > 0) {
 		        $this->content->items[] = "<a href=\"$CFG->wwwroot/blocks/dictionary/add.php?id=".$COURSE->id."\">".get_string('add', 'block_dictionary').'</a>';
 			} else {
 				$this->content->items[] = "<a href=\"$CFG->wwwroot/blocks/dictionary/edit.php?id=".$usedictionary->id."\">".get_string('edit', 'block_dictionary').'</a>';
