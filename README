@@ -1,0 +1,31 @@
+<!-- -*- markdown -*- -->
+
+Popup Dictionary plugin
+=======================
+
+Patrick Thibaudeau's "Pop up Dictionary" filter/block plugin for Moodle 1.8 or later (currently not 2.0).
+
+A code-repository does not appear to be at http://cvs.moodle.org or elsewhere. 
+(A short-term fork, I hope!)
+
+Installation
+------------
+* See, http://moodle.org/mod/data/view.php?d=13&rid=1751
+
+TODO
+----
+* Prevent the PHP notices in Moodle developer mode.
+* Usability and accessibility improvements.
+* Make installation easier, so you don't have to copy to filter and blocks directories.
+* Port to Moodle 2.0.
+* Merge with the 'official' code/ download, wherever it is.
+
+Credits
+-------
+Dictionary plugin. Copyright (c) Patrick Thibaudeau.
+
+* License <http://gnu.org/copyleft/gpl.html> (to check)
+* About and code: http://moodle.org/mod/data/view.php?d=13&rid=1751
+
+Modifications. Nicholas Freear <http://freear.org.uk>
+
