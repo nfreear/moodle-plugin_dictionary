@@ -14,15 +14,18 @@ Installation
 
 TODO
 ----
-* Prevent the PHP notices in Moodle developer mode.
+* Prevent PHP notices in Moodle developer mode ("trying to get property of non-object..") - handle false return from get_record() calls.
 * Usability and accessibility improvements.
-* Make installation easier, so you don't have to copy to filter and blocks directories.
+* Make installation easier, so you don't have to insert javascript reference in theme!
+* Make installation easier (2), so you don't have to copy to filter and blocks directories.
 * Port to Moodle 2.0.
+* More separation of business logic from presentation (see blocks/...html files).
+* Fix indentation.
 * Merge with the 'official' code/ download, wherever it is.
 
 Credits
 -------
-Dictionary plugin. Copyright (c) Patrick Thibaudeau.
+Dictionary plugin. Copyright (c) 2008 Patrick Thibaudeau.
 
 * License <http://gnu.org/copyleft/gpl.html> (to check)
 * About and code: http://moodle.org/mod/data/view.php?d=13&rid=1751
