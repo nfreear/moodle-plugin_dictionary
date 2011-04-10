@@ -12,10 +12,14 @@ Installation
 ------------
 * See, http://moodle.org/mod/data/view.php?d=13&rid=1751
 
-TODO
+DONE
 ----
 * Prevent PHP notices in Moodle developer mode ("trying to get property of non-object..") - handle false return from get_record() calls.
-* Usability and accessibility improvements.
+* Some usability and accessibility improvements (tooltip for filter-output, <label> in admin forms).
+
+TODO
+----
+* More usability and accessibility improvements.
 * Make installation easier, so you don't have to insert javascript reference in theme!
 * Make installation easier (2), so you don't have to copy to filter and blocks directories.
 * Port to Moodle 2.0.
